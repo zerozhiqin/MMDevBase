@@ -8,12 +8,12 @@ public class BGTask {
         private Work<R> doing;
         private Done done;
 
-        public Builder when(Start start) {
+        public Builder<R> when(Start start) {
             this.start = start;
             return this;
         }
 
-        public Builder when(Done<R> done) {
+        public Builder<R> when(Done<R> done) {
             this.done = done;
             return this;
         }
@@ -46,7 +46,7 @@ public class BGTask {
         }
     }
 
-    public static <R> Builder doing(Work<R> work) {
+    public static <R> Builder<R> doing(Work<R> work) {
         Builder<R> builder = new Builder<>();
         builder.doing = work;
         return builder;
